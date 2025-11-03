@@ -2,13 +2,21 @@
 import React, { useState } from 'react';
 import type { Page } from './types';
 import Header from './components/Header';
-import Footer from './components/Footer';
+import { Footer } from './components/Footer';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Services from './components/pages/Services';
 import Enrollment from './components/pages/Enrollment';
 import Login from './components/pages/Login';
 import Dashboard from './components/pages/Dashboard';
+import {
+  Home as HomeIcon,
+  Users,
+  BookOpen,
+  PenSquare,
+  LogIn,
+  LayoutDashboard
+} from "lucide-react";
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('Inicio');
@@ -43,7 +51,91 @@ const App: React.FC = () => {
       <main className="flex-grow">
         {renderPage()}
       </main>
-      <Footer />
+      <Footer
+        className="mt-20"
+        brand={{
+          name: "Estrella Rodriguez",
+          description: "Apoyo académico personalizado para que cada estudiante alcance su máximo potencial.",
+        }}
+        socialLinks={[
+          {
+            name: "Facebook",
+            href: "#",
+          },
+          {
+            name: "Instagram",
+            href: "#",
+          },
+          {
+            name: "Twitter",
+            href: "#",
+          },
+        ]}
+        columns={[
+          {
+            title: "Navegación",
+            links: [
+              {
+                name: "Inicio",
+                Icon: HomeIcon,
+                href: "#",
+                onClick: () => setCurrentPage('Inicio'),
+              },
+              {
+                name: "Nosotros",
+                Icon: Users,
+                href: "#",
+                onClick: () => setCurrentPage('Nosotros'),
+              },
+              {
+                name: "Servicios",
+                Icon: BookOpen,
+                href: "#",
+                onClick: () => setCurrentPage('Servicios'),
+              },
+              {
+                name: "Inscripciones",
+                Icon: PenSquare,
+                href: "#",
+                onClick: () => setCurrentPage('Inscripciones'),
+              },
+            ],
+          },
+          {
+            title: "Acceso",
+            links: [
+              {
+                name: "Login",
+                Icon: LogIn,
+                href: "#",
+                onClick: () => setCurrentPage('Login'),
+              },
+              {
+                name: "Dashboard",
+                Icon: LayoutDashboard,
+                href: "#",
+                onClick: () => setCurrentPage('Dashboard'),
+              },
+            ],
+          },
+          {
+            title: "Legal",
+            links: [
+              {
+                name: "Política de Privacidad",
+                Icon: Users,
+                href: "#",
+              },
+              {
+                name: "Términos de Servicio",
+                Icon: Users,
+                href: "#",
+              },
+            ],
+          },
+        ]}
+        copyright={`Estrella Rodriguez Inc. © ${new Date().getFullYear()}`}
+      />
     </div>
   );
 };
