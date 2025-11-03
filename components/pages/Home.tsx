@@ -1,6 +1,7 @@
 
 import React from 'react';
 import type { Page } from '../../types';
+import Testimonials from './Testimonials';
 
 interface HomeProps {
     setCurrentPage: (page: Page) => void;
@@ -67,6 +68,8 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
                     </div>
                 </div>
             </section>
+
+            <Testimonials />
         </div>
     );
 };
