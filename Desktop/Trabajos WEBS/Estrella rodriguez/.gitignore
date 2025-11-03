@@ -1,0 +1,51 @@
+# Ignorar archivos del sistema y temporales
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de configuración personal
+../../../.cache/
+../../../.claude.json*
+../../../.claude/
+../../../.config/
+../../../.cursor/
+../../../.docker/
+../../../.expo/
+../../../.gemini/
+../../../.gitconfig
+../../../.local/
+../../../.openjfx/
+../../../.rustup/
+../../../.ssh/
+../../../.vscode/
+../../../AppData/
+../../../Contacts/
+../../../Cookies/
+../../../Datos de programa/
+../../../Documents/
+../../../Downloads/
+../../../Entorno de red/
+../../../Favorites/
+../../../Impresoras/
+../../../Links/
+../../../Menú Inicio/
+../../../Mis documentos/
+../../../Music/
+../../../NTUSER.DAT*
+../../../ntuser.dat*
+../../../OneDrive/
+../../../Pictures/
+../../../Plantillas/
+../../../Reciente/
+../../../Saved Games/
+../../../Searches/
+../../../SendTo/
+../../../Videos/
+../../../node_modules/
+../../../npm-cache/
+../../../pipx/
+../../../*.png
+../../../package-lock.json
+../../../package.json
+
+# Ignorar archivos de configuración local
+Configuración local/
