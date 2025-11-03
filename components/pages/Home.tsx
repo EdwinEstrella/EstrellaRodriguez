@@ -11,7 +11,7 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
     return (
         <div className="animate-fade-in">
             {/* Hero Section */}
-            <section className="relative bg-cover bg-center text-white" style={{ backgroundImage: "url('https://picsum.photos/1600/900?image=24')" }}>
+            <section className="relative bg-cover bg-center text-white" style={{ backgroundImage: "url('/Herofoto.jpg')", backgroundPosition: 'center -55px' }}>
                 <div className="absolute inset-0 bg-black opacity-50"></div>
                 <div className="relative container mx-auto px-6 py-32 md:py-48 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>

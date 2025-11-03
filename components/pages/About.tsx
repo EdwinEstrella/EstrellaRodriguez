@@ -52,10 +52,9 @@ const About: React.FC = () => {
                 {/* Team Section */}
                 <div className="text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-10">Conoce a Nuestro Equipo</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-                        <TeamMemberCard name="Ana Rodriguez" role="Fundadora y Directora" imageUrl="https://picsum.photos/200/200?image=823" />
-                        <TeamMemberCard name="Carlos Pérez" role="Tutor de Matemáticas" imageUrl="https://picsum.photos/200/200?image=669" />
-                        <TeamMemberCard name="Luisa Martinez" role="Tutora de Ciencias" imageUrl="https://picsum.photos/200/200?image=996" />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 justify-items-center">
+                        <TeamMemberCard name="Edwin Estrella" role="Co-fundador y Manager" imageUrl="https://randomuser.me/api/portraits/men/10.jpg" />
+                        <TeamMemberCard name="Anyi Daniela de Estrella" role="Fundadora y Maestra administrativa" imageUrl="https://randomuser.me/api/portraits/women/10.jpg" />
                     </div>
                 </div>
             </div>
