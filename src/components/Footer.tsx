@@ -1,7 +1,5 @@
-"use client";
-
-import * as React from "react";
-import { cn } from "../lib/utils";
+import React from 'react';
+import { cn } from '../../lib/utils';
 import { LucideIcon } from "lucide-react";
 
 interface SocialLink {
@@ -33,6 +31,7 @@ interface FooterProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Footer = React.forwardRef<HTMLDivElement, FooterProps>(
   ({ className, brand, socialLinks, columns, copyright, ...props }, ref) => {
+    console.log(brand);
     return (
       <div
         ref={ref}
@@ -43,10 +42,10 @@ export const Footer = React.forwardRef<HTMLDivElement, FooterProps>(
           <div className="grid grid-cols-1 lg:grid-cols-12">
             <div className="lg:col-span-4">
               <a href="#" className="text-xl font-semibold">
-                {brand.name}
+                {brand['name']}
               </a>
               <p className="text-sm text-foreground/60">
-                {brand.description}
+                {brand['description']}
               </p>
 
               <p className="text-sm font-light text-foreground/55 mt-3.5">
