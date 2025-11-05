@@ -5,47 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Estrella Rodriguez - Sala de Tareas</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              'poppins': ['Poppins', 'sans-serif'],
-            },
-            colors: {
-              'brand-blue': '#005f73',
-              'brand-red': '#ae2012',
-              'brand-orange': '#ee9b00',
-              'brand-yellow': '#e9d8a6',
-              'brand-light': '#f8f9fa',
-            },
-            animation: {
-              'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
-              'fade-in': 'fade-in 0.6s ease-in-out forwards',
-              'slide-in-left': 'slide-in-left 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards',
-            },
-            keyframes: {
-              'fade-in-up': {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              'fade-in': {
-                '0%': { opacity: '0' },
-                '100%': { opacity: '1' },
-              },
-              'slide-in-left': {
-                '0%': { transform: 'translateX(-100px)', opacity: '0' },
-                '100%': { transform: 'translateX(0)', opacity: '1' },
-              }
-            }
-          }
-        }
-      }
-    </script>
   <script type="importmap">
 {
   "imports": {
@@ -55,7 +17,7 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+<link rel="stylesheet" href="/src/index.css">
 </head>
   <body class="bg-brand-light font-poppins">
     <div id="root"></div>
