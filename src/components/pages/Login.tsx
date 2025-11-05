@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import type { Page } from '../../types';
+import WarpShaderHero from '../ui/wrap-shader';
 
 interface LoginProps {
     setCurrentPage?: (page: Page) => void;
@@ -28,81 +29,88 @@ const Login: React.FC<LoginProps> = ({ setCurrentPage }) => {
     };
 
     return (
-        <div className="min-h-[60vh] flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 animate-fade-in">
-            <div className="max-w-md w-full space-y-8">
+        <WarpShaderHero onBack={() => setCurrentPage?.('Inicio')}>
+            <div className="max-w-md w-full bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl p-8 space-y-6 border border-white/20">
                 <div>
-                    <h2 className="mt-6 text-center text-3xl font-extrabold text-brand-blue">
+                    <h2 className="text-center text-3xl font-bold text-white mb-2">
                         Acceso al Portal
                     </h2>
-                    <p className="mt-2 text-center text-sm text-gray-600">
+                    <p className="text-center text-white/80 text-sm">
                         Ingresa a tu cuenta para ver el progreso.
                     </p>
-                    <p className="mt-2 text-center text-xs text-blue-600">
+                    <p className="text-center text-white/70 text-xs mt-2">
                         Usa contraseña "1234" para acceder al dashboard
                     </p>
                 </div>
-                <div className="bg-white p-8 rounded-2xl shadow-lg">
-                    <form className="space-y-6" onSubmit={handleSubmit}>
-                        {error && (
-                            <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-md text-sm">
-                                {error}
-                            </div>
-                        )}
-                        <div className="rounded-md shadow-sm -space-y-px">
-                            <div>
-                                <label htmlFor="email-address" className="sr-only">Usuario</label>
-                                <input
-                                    id="email-address"
-                                    name="email"
-                                    type="email"
-                                    autoComplete="email"
-                                    required
-                                    className="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-brand-orange focus:border-brand-orange focus:z-10 sm:text-sm"
-                                    placeholder="Usuario o Correo Electrónico"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="password" className="sr-only">Contraseña</label>
-                                <input
-                                    id="password"
-                                    name="password"
-                                    type="password"
-                                    autoComplete="current-password"
-                                    required
-                                    className="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-brand-orange focus:border-brand-orange focus:z-10 sm:text-sm"
-                                    placeholder="Contraseña"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                />
-                            </div>
+
+                <form className="space-y-6" onSubmit={handleSubmit}>
+                    {error && (
+                        <div className="bg-red-500/20 border border-red-400/30 text-red-100 px-4 py-3 rounded-md text-sm backdrop-blur-sm">
+                            {error}
                         </div>
-
-                        <div className="flex items-center justify-between">
-                            <div className="flex items-center">
-                                <input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 text-brand-blue focus:ring-brand-orange border-gray-300 rounded" />
-                                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-                                    Recordarme
-                                </label>
-                            </div>
-
-                            <div className="text-sm">
-                                <a href="#" className="font-medium text-brand-orange hover:text-brand-red">
-                                    ¿Olvidaste tu contraseña?
-                                </a>
-                            </div>
-                        </div>
-
+                    )}
+                    <div className="space-y-4">
                         <div>
-                            <button type="submit" className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-brand-blue hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue transition-colors">
-                                Iniciar Sesión
-                            </button>
+                            <label htmlFor="email-address" className="sr-only">Usuario</label>
+                            <input
+                                id="email-address"
+                                name="email"
+                                type="email"
+                                autoComplete="email"
+                                required
+                                className="appearance-none relative block w-full px-4 py-3 border border-white/30 placeholder-white/50 text-white bg-white/10 backdrop-blur-sm rounded-md focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent sm:text-sm transition-all"
+                                placeholder="Usuario o Correo Electrónico"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
                         </div>
-                    </form>
-                </div>
+                        <div>
+                            <label htmlFor="password" className="sr-only">Contraseña</label>
+                            <input
+                                id="password"
+                                name="password"
+                                type="password"
+                                autoComplete="current-password"
+                                required
+                                className="appearance-none relative block w-full px-4 py-3 border border-white/30 placeholder-white/50 text-white bg-white/10 backdrop-blur-sm rounded-md focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent sm:text-sm transition-all"
+                                placeholder="Contraseña"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center">
+                            <input
+                                id="remember-me"
+                                name="remember-me"
+                                type="checkbox"
+                                className="h-4 w-4 text-purple-400 focus:ring-purple-300 border-white/30 rounded bg-white/10"
+                            />
+                            <label htmlFor="remember-me" className="ml-2 block text-sm text-white/80">
+                                Recordarme
+                            </label>
+                        </div>
+
+                        <div className="text-sm">
+                            <a href="#" className="font-medium text-white/80 hover:text-white transition-colors">
+                                ¿Olvidaste tu contraseña?
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button
+                            type="submit"
+                            className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-300 backdrop-blur-sm"
+                        >
+                            Iniciar Sesión
+                        </button>
+                    </div>
+                </form>
             </div>
-        </div>
+        </WarpShaderHero>
     );
 };
 

@@ -40,9 +40,13 @@ const App: React.FC = () => {
     }
   };
 
-  // Don't show Header and Footer when on Dashboard page
+  // Don't show Header and Footer when on Dashboard or Login page
   if (currentPage === 'Dashboard') {
     return <Dashboard setCurrentPage={setCurrentPage} />;
+  }
+
+  if (currentPage === 'Login') {
+    return <Login setCurrentPage={setCurrentPage} />;
   }
 
   return (
