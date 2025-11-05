@@ -72,7 +72,6 @@ const Enrollment: React.FC = () => {
         studentLastName: '',
         studentDob: '',
         studentGender: '',
-        studentId: '',
         studentEmail: '',
         studentPhone: '',
         applyingGrade: '',
@@ -125,7 +124,6 @@ const Enrollment: React.FC = () => {
             if (!formData.studentLastName) newErrors.studentLastName = 'El apellido es obligatorio.';
             if (!formData.studentDob) newErrors.studentDob = 'La fecha de nacimiento es obligatoria.';
             if (!formData.studentGender) newErrors.studentGender = 'El género es obligatorio.';
-            if (!formData.studentId) newErrors.studentId = 'La cédula es obligatoria.';
             if (!formData.applyingGrade) newErrors.applyingGrade = 'El grado es obligatorio.';
             if (formData.studentEmail && !emailRegex.test(formData.studentEmail)) newErrors.studentEmail = 'Formato de email inválido.';
             if (formData.studentPhone && !phoneRegex.test(formData.studentPhone)) newErrors.studentPhone = 'Formato de teléfono inválido.';
@@ -189,7 +187,6 @@ const Enrollment: React.FC = () => {
                              </select>
                              {errors.studentGender && <p className="text-red-500 text-sm mt-1">{errors.studentGender}</p>}
                         </div>
-                        <InputField id="studentId" name="studentId" label="Cédula de Identidad" value={formData.studentId} onChange={handleInputChange} error={errors.studentId} required />
                         <div>
                             <label htmlFor="applyingGrade" className="block text-gray-700 font-semibold mb-2">Grado al que Aplica <span className="text-brand-red">*</span></label>
                             <select id="applyingGrade" name="applyingGrade" value={formData.applyingGrade} onChange={handleInputChange} className={`w-full px-4 py-2 border rounded-lg focus:ring-brand-orange focus:border-brand-orange ${errors.applyingGrade ? 'border-red-500' : 'border-gray-300'}`}>
@@ -279,7 +276,7 @@ const Enrollment: React.FC = () => {
             );
             case 4: 
                 const summarySections = [
-                    { title: 'Datos del Estudiante', data: { 'Nombre Completo': `${formData.studentFirstName} ${formData.studentLastName}`, 'Fecha de Nacimiento': formData.studentDob, 'Género': formData.studentGender, 'Cédula': formData.studentId, 'Grado': formData.applyingGrade, 'Email': formData.studentEmail || 'N/A', 'Teléfono': formData.studentPhone || 'N/A', 'Info Médica': formData.medicalInfo || 'N/A' } },
+                    { title: 'Datos del Estudiante', data: { 'Nombre Completo': `${formData.studentFirstName} ${formData.studentLastName}`, 'Fecha de Nacimiento': formData.studentDob, 'Género': formData.studentGender, 'Grado': formData.applyingGrade, 'Email': formData.studentEmail || 'N/A', 'Teléfono': formData.studentPhone || 'N/A', 'Info Médica': formData.medicalInfo || 'N/A' } },
                     { title: 'Datos del Representante', data: { 'Nombre Completo': `${formData.guardianFirstName} ${formData.guardianLastName}`, 'Cédula': formData.guardianId, 'Parentesco': formData.relationship, 'Email': formData.guardianEmail, 'Teléfono': formData.guardianPhone, 'Dirección': formData.address } },
                     { title: 'Información Académica', data: { 'Necesidades Especiales': formData.hasSpecialNeeds, 'Descripción': formData.hasSpecialNeeds === 'Si' ? formData.specialNeedsDescription : 'N/A', 'Cómo nos conoció': formData.howHeard, 'Expectativas': formData.expectations } }
                 ];
