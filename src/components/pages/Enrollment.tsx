@@ -14,14 +14,16 @@ const ProgressBar: React.FC<{ currentStep: number }> = ({ currentStep }) => {
                     const isActive = currentStep >= stepNumber;
                     return (
                         <React.Fragment key={step}>
-                            <div className="flex flex-col items-center text-center">
-                                <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${isActive ? 'bg-brand-blue text-white' : 'bg-gray-200 text-gray-500'}`}>
-                                    {currentStep > stepNumber ? '✓' : stepNumber}
+                            <div className="flex flex-col items-center text-center flex-1">
+                                <div className={`w-6 h-6 xs:w-8 xs:h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 ${isActive ? 'bg-brand-blue text-white' : 'bg-gray-200 text-gray-500'}`}>
+                                    <span className="text-xs xs:text-sm sm:text-base">
+                                        {currentStep > stepNumber ? '✓' : stepNumber}
+                                    </span>
                                 </div>
-                                <p className={`mt-2 text-sm font-semibold transition-all duration-300 ${isActive ? 'text-brand-blue' : 'text-gray-500'}`}>{step}</p>
+                                <p className={`mt-1 xs:mt-2 text-xs xs:text-sm sm:text-sm font-semibold transition-all duration-300 ${isActive ? 'text-brand-blue' : 'text-gray-500'}`}>{step}</p>
                             </div>
                             {index < steps.length - 1 && (
-                                <div className={`flex-1 h-1 mx-2 transition-all duration-300 ${currentStep > stepNumber ? 'bg-brand-blue' : 'bg-gray-200'}`}></div>
+                                <div className={`w-2 xs:w-4 sm:w-8 h-0.5 xs:h-1 sm:h-1 transition-all duration-300 ${currentStep > stepNumber ? 'bg-brand-blue' : 'bg-gray-200'}`}></div>
                             )}
                         </React.Fragment>
                     );
