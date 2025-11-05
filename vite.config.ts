@@ -6,14 +6,6 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
-      server: {
-        port: 3000,
-        host: '0.0.0.0',
-        headers: {
-          'Content-Type': 'application/javascript',
-          'Access-Control-Allow-Origin': '*',
-        }
-      },
       plugins: [
         react(),
         tailwindcss(),
@@ -24,15 +16,7 @@ export default defineConfig(({ mode }) => {
       },
       resolve: {
         alias: {
-          '@': path.resolve(__dirname, '.'),
-        }
-      },
-      build: {
-        target: 'esnext',
-        rollupOptions: {
-          output: {
-            manualChunks: undefined,
-          }
+          '@': path.resolve(__dirname, './src'),
         }
       }
     };
