@@ -2,13 +2,53 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Meta Tags Esenciales -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Estrella Rodriguez - Sala de Tareas</title>
+    <meta name="theme-color" content="#3B82F6" />
+    <meta name="color-scheme" content="light" />
+
+    <!-- SEO Básico -->
+    <title>Estrella Rodriguez - Sala de Tareas | Apoyo Académico Personalizado</title>
+    <meta name="description" content="Sala de tareas especializada en apoyo académico personalizado para estudiantes. Ayudamos a cada estudiante a alcanzar su máximo potencial con tutores expertos y método probado.">
+    <meta name="keywords" content="sala de tareas, apoyo académico, tutorías, refuerzo escolar, educación personalizada, Estrella Rodriguez, ayuda con tareas">
+    <meta name="author" content="Estrella Rodriguez">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Estrella Rodriguez - Sala de Tareas | Apoyo Académico Personalizado">
+    <meta property="og:description" content="Sala de tareas especializada en apoyo académico personalizado. Ayudamos a cada estudiante a alcanzar su máximo potencial con tutores expertos.">
+    <meta property="og:url" content="https://estrellarodriguez.site">
+    <meta property="og:site_name" content="Estrella Rodriguez - Sala de Tareas">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Estrella Rodriguez - Sala de Tareas">
+    <meta name="twitter:description" content="Apoyo académico personalizado para que cada estudiante alcance su máximo potencial.">
+    <meta name="twitter:site" content="@EstrellaRodriguez">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://estrellarodriguez.site">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Preconnect y Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <script type="importmap">
+
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="/src/index.css" as="style">
+
+    <!-- Import Map para React -->
+    <script type="importmap">
 {
   "imports": {
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
@@ -17,10 +57,48 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/src/index.css">
-</head>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Estrella Rodriguez - Sala de Tareas",
+  "description": "Sala de tareas especializada en apoyo académico personalizado para estudiantes",
+  "url": "https://estrellarodriguez.site",
+  "logo": "https://estrellarodriguez.site/logo.svg",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-XXX-XXX-XXXX",
+    "contactType": "customer service"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "ES"
+  },
+  "sameAs": [
+    "https://twitter.com/EstrellaRodriguez",
+    "https://facebook.com/EstrellaRodriguez"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "name": "Sesión de Tutoría Personalizada",
+    "description": "Apoyo académico personalizado en todas las materias"
+  }
+}
+</script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/src/index.css">
+  </head>
+
   <body class="bg-brand-light font-poppins">
     <div id="root"></div>
+
+    <!-- Main Script -->
     <script type="module" src="/src/index.tsx"></script>
+
+    <!-- Analytics placeholder (opcional) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
   </body>
 </html>
